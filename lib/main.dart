@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sanad_screens/Loading.dart';
-import 'package:sanad_screens/login.dart';
-import 'package:sanad_screens/signup.dart';
+import 'package:sanad_screens/screens/paymentInfo.dart';
+import 'package:sanad_screens/screens/serviceInfoScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignUp(),
+      initialRoute: ServiceInfoScreen.id,
+      routes: {
+        PaymentInfoScreen.id: (context) => PaymentInfoScreen(),
+        ServiceInfoScreen.id: (context) => ServiceInfoScreen(),
+      },
     );
   }
 }
