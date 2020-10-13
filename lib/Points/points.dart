@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
-class DrawerMenu extends StatefulWidget {
+class Points extends StatefulWidget {
   @override
-  _DrawerMenuState createState() => _DrawerMenuState();
+  _PointsState createState() => _PointsState();
 }
 
-class _DrawerMenuState extends State<DrawerMenu> {
+class _PointsState extends State<Points> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -20,7 +20,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
               children: [
                 Container(
                   height: deviceHeight(context),
-                  width: deviceWidth(context),
+                  width: deviceWidth(context) * 0.85,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('images/10.png'),
@@ -207,68 +207,115 @@ class _DrawerMenuState extends State<DrawerMenu> {
             child: IconButton(
               icon: Icon(
                 Icons.menu,
-                color: Colors.lightBlue,
+                color: Colors.blue,
                 size: 40.0,
               ),
               onPressed: () => scaffoldKey.currentState.openEndDrawer(),
             ),
           ),
           Positioned(
-            top: 150,
-            left: 100,
-            child: Container(
-              height: deviceHeight(context) * 0.3,
-              width: deviceWidth(context) * 0.5,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/3.png'),
-                  fit: BoxFit.cover,
+            top: 40,
+            left: 120,
+            child: Row(
+              children: [
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  child: Tab(
+                    icon: Image.asset(
+                      "images/22.png",
+                      color: Colors.blue,
+                    ),
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'POINTS',
+                    style: TextStyle(
+                        fontSize: 20.0, letterSpacing: 1.0, color: Colors.blue),
+                  ),
+                )
+              ],
             ),
           ),
           Positioned(
-            top: 320,
-            left: 30.0,
+            top: 150.0,
+            left: 32.0,
             child: Container(
               height: deviceHeight(context) * 0.8,
               width: deviceWidth(context) * 0.85,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+              child: ListView(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 100, top: 80.0),
+                    padding: EdgeInsets.only(top: 0.0),
                     child: Container(
                       child: Text(
-                        'Welcome Ahmed,',
+                        'You have',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 15.0,
                           letterSpacing: 2.0,
-                          decoration: TextDecoration.none,
+                          color: Colors.black,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 5.0),
                   Padding(
-                    padding:
-                        EdgeInsets.only(left: 50.0, right: 50.0, top: 20.0),
+                    padding: const EdgeInsets.only(top: 30.0),
                     child: Container(
-                      height: 55,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40.0),
-                        color: Colors.lightBlueAccent,
-                      ),
-                      child: FlatButton(
-                        onPressed: () {},
-                        child: Text(
-                          'START AN ORDER',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            letterSpacing: 2.0,
-                            color: Colors.grey[100],
-                          ),
+                      height: 120.0,
+                      width: 120.0,
+                      child: Tab(
+                        icon: Image.asset(
+                          "images/23.png",
                         ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 30.0),
+                    child: Text(
+                      '1000 POINTS',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 25.0,
+                        letterSpacing: 2.5,
+                        color: Colors.lightBlue,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 0.0),
+                    child: Container(
+                      child: Text(
+                        'earn points by sharing your code with friends & making orders',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          letterSpacing: 2.0,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40, 0),
+                    child: Text(
+                      'Points history:',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        letterSpacing: 2.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Text(
+                      'Code 1234 ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        letterSpacing: 2.0,
+                        color: Colors.black,
                       ),
                     ),
                   ),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
-class DrawerMenu extends StatefulWidget {
+class OrderSettings extends StatefulWidget {
   @override
-  _DrawerMenuState createState() => _DrawerMenuState();
+  _OrderSettingsState createState() => _OrderSettingsState();
 }
 
-class _DrawerMenuState extends State<DrawerMenu> {
+class _OrderSettingsState extends State<OrderSettings> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -207,67 +207,152 @@ class _DrawerMenuState extends State<DrawerMenu> {
             child: IconButton(
               icon: Icon(
                 Icons.menu,
-                color: Colors.lightBlue,
+                color: Colors.blue,
                 size: 40.0,
               ),
               onPressed: () => scaffoldKey.currentState.openEndDrawer(),
             ),
           ),
           Positioned(
-            top: 150,
-            left: 100,
-            child: Container(
-              height: deviceHeight(context) * 0.3,
-              width: deviceWidth(context) * 0.5,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/3.png'),
-                  fit: BoxFit.cover,
+            top: 40,
+            left: 120,
+            child: Row(
+              children: [
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  child: Tab(
+                    icon: Image.asset(
+                      "images/24.png",
+                      color: Colors.blue,
+                    ),
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'ORDERS 1234',
+                    style: TextStyle(
+                        fontSize: 20.0, letterSpacing: 1.0, color: Colors.blue),
+                  ),
+                )
+              ],
             ),
           ),
           Positioned(
-            top: 320,
-            left: 30.0,
+            top: 150.0,
+            left: 32.0,
             child: Container(
               height: deviceHeight(context) * 0.8,
               width: deviceWidth(context) * 0.85,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+              child: ListView(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 100, top: 80.0),
+                    padding: EdgeInsets.only(top: 0.0),
                     child: Container(
                       child: Text(
-                        'Welcome Ahmed,',
+                        'Your order number XXX is confirmed.',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 15.0,
                           letterSpacing: 2.0,
-                          decoration: TextDecoration.none,
+                          color: Colors.black,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 5.0),
                   Padding(
-                    padding:
-                        EdgeInsets.only(left: 50.0, right: 50.0, top: 20.0),
-                    child: Container(
-                      height: 55,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40.0),
-                        color: Colors.lightBlueAccent,
+                    padding: const EdgeInsets.fromLTRB(40.0, 0.0, 40, 0),
+                    child: Text(
+                      'Track progress of your order or Edit/Cancel your order from: ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        letterSpacing: 2.0,
+                        color: Colors.black,
                       ),
-                      child: FlatButton(
-                        onPressed: () {},
-                        child: Text(
-                          'START AN ORDER',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            letterSpacing: 2.0,
-                            color: Colors.grey[100],
-                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Container(
+                      height: 50.0,
+                      width: 50.0,
+                      child: Tab(
+                        icon: Image.asset(
+                          "images/6.png",
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 30,
+                    padding: EdgeInsets.only(top: 10.0),
+                    child: FlatButton(
+                      onPressed: () {},
+                      child: Text(
+                        'My Orders',
+                        style: TextStyle(
+                          fontSize: 17.0,
+                          letterSpacing: 1.5,
+                          color: Colors.lightBlue,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 50.0),
+                    child: Container(
+                      child: Text(
+                        'Congratulations!',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          letterSpacing: 2.0,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(40.0, 3.0, 40, 0),
+                    child: Text(
+                      'You earned XXX points',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        letterSpacing: 2.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'Track the progress of your points from: ',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      letterSpacing: 2.0,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0),
+                    child: Container(
+                      height: 50.0,
+                      width: 50.0,
+                      child: Tab(
+                        icon: Image.asset(
+                          "images/7.png",
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 30,
+                    padding: EdgeInsets.only(top: 10.0),
+                    child: FlatButton(
+                      onPressed: () {},
+                      child: Text(
+                        'My Points',
+                        style: TextStyle(
+                          fontSize: 17.0,
+                          letterSpacing: 1.5,
+                          color: Colors.lightBlue,
                         ),
                       ),
                     ),

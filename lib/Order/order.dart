@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
-class DrawerMenu extends StatefulWidget {
+class Order extends StatefulWidget {
   @override
-  _DrawerMenuState createState() => _DrawerMenuState();
+  _OrderState createState() => _OrderState();
 }
 
-class _DrawerMenuState extends State<DrawerMenu> {
+class _OrderState extends State<Order> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -214,61 +214,121 @@ class _DrawerMenuState extends State<DrawerMenu> {
             ),
           ),
           Positioned(
-            top: 150,
-            left: 100,
-            child: Container(
-              height: deviceHeight(context) * 0.3,
-              width: deviceWidth(context) * 0.5,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/3.png'),
-                  fit: BoxFit.cover,
+            top: 40,
+            left: 120,
+            child: Row(
+              children: [
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  child: Tab(
+                    icon: Image.asset(
+                      "images/12.png",
+                      color: Colors.lightBlue,
+                    ),
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'ORDER 1234',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        letterSpacing: 1.0,
+                        color: Colors.lightBlue),
+                  ),
+                )
+              ],
             ),
           ),
           Positioned(
-            top: 320,
+            top: 200,
             left: 30.0,
             child: Container(
-              height: deviceHeight(context) * 0.8,
+              height: deviceHeight(context) * 0.5,
               width: deviceWidth(context) * 0.85,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 100, top: 80.0),
+                    padding: EdgeInsets.only(left: 5.0, right: 20.0),
                     child: Container(
-                      child: Text(
-                        'Welcome Ahmed,',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          letterSpacing: 2.0,
-                          decoration: TextDecoration.none,
-                        ),
+                      height: 170,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30.0),
+                        color: Colors.lightBlueAccent,
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.fromLTRB(0, 30.0, 0, 10.0),
+                            child: Container(
+                              height: 70.0,
+                              width: 70.0,
+                              child: Tab(
+                                icon: Image.asset(
+                                  "images/13.png",
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                          FlatButton(
+                            onPressed: () {},
+                            child: Text(
+                              'ACTIVITY LOG',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                letterSpacing: 2.0,
+                                color: Colors.grey[100],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                  SizedBox(height: 5.0),
                   Padding(
-                    padding:
-                        EdgeInsets.only(left: 50.0, right: 50.0, top: 20.0),
+                    padding: const EdgeInsets.only(left: 20.0),
                     child: Container(
-                      height: 55,
+                      height: 170,
+                      width: 150,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40.0),
+                        borderRadius: BorderRadius.circular(30.0),
                         color: Colors.lightBlueAccent,
                       ),
-                      child: FlatButton(
-                        onPressed: () {},
-                        child: Text(
-                          'START AN ORDER',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            letterSpacing: 2.0,
-                            color: Colors.grey[100],
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.fromLTRB(0, 30.0, 0, 10.0),
+                            child: Container(
+                              height: 70.0,
+                              width: 70.0,
+                              child: Tab(
+                                icon: Image.asset(
+                                  "images/14.png",
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          FlatButton(
+                            onPressed: () {},
+                            child: Text(
+                              'ORDER SETTINGS',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                letterSpacing: 2.0,
+                                color: Colors.grey[100],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
