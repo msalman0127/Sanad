@@ -139,6 +139,7 @@ class _TrackOrderState extends State<TrackOrder> {
                           Padding(
                             padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 20.0),
                             child: FlatButton(
+                              onPressed: () {},
                               child: Text(
                                 'Edit Order',
                                 style: TextStyle(

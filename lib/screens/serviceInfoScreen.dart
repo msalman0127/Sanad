@@ -2,6 +2,7 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sanad_screens/commonWidgets/heading.dart';
+import 'package:sanad_screens/commonWidgets/round_button_flexible.dart';
 import 'package:sanad_screens/consts/colors.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
@@ -13,7 +14,16 @@ class ServiceInfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        children: [Heading(title: 'Service Package'), textFields(context)],
+        children: [
+          Heading(title: 'Service Package'),
+          textFields(context),
+          SizedBox(height: deviceHeight(context) * 0.2),
+          RoundButtonFlexible(
+              text: 'Continue',
+              onPressed: () {},
+              height: 50,
+              width: deviceWidth(context))
+        ],
       ),
     );
   }
