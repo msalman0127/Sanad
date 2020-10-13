@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
-class DrawerMenu extends StatefulWidget {
+class AddressSettings extends StatefulWidget {
   @override
-  _DrawerMenuState createState() => _DrawerMenuState();
+  _AddressSettingsState createState() => _AddressSettingsState();
 }
 
-class _DrawerMenuState extends State<DrawerMenu> {
+class _AddressSettingsState extends State<AddressSettings> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -207,65 +207,184 @@ class _DrawerMenuState extends State<DrawerMenu> {
             child: IconButton(
               icon: Icon(
                 Icons.menu,
-                color: Colors.lightBlue,
+                color: Colors.blue,
                 size: 40.0,
               ),
               onPressed: () => scaffoldKey.currentState.openEndDrawer(),
             ),
           ),
           Positioned(
-            top: 150,
-            left: 100,
-            child: Container(
-              height: deviceHeight(context) * 0.3,
-              width: deviceWidth(context) * 0.5,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/3.png'),
-                  fit: BoxFit.cover,
+            top: 40,
+            left: 120,
+            child: Row(
+              children: [
+                Container(
+                  height: 50.0,
+                  width: 50.0,
+                  child: Tab(
+                    icon: Image.asset(
+                      "images/21.png",
+                      color: Colors.blue,
+                    ),
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'ADDRESS SETTINGS',
+                    style: TextStyle(
+                        fontSize: 20.0, letterSpacing: 1.0, color: Colors.blue),
+                  ),
+                )
+              ],
             ),
           ),
           Positioned(
-            top: 320,
-            left: 30.0,
+            top: 100.0,
+            left: 32.0,
             child: Container(
-              height: deviceHeight(context) * 0.8,
+              height: deviceHeight(context),
               width: deviceWidth(context) * 0.85,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+              child: ListView(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 100, top: 80.0),
+                    padding: EdgeInsets.only(top: 10.0),
                     child: Container(
-                      child: Text(
-                        'Welcome Ahmed,',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          letterSpacing: 2.0,
-                          decoration: TextDecoration.none,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 1.5,
+                            ),
+                          ),
+                          hintText: 'Building No., Street Name ',
+                          contentPadding: EdgeInsets.only(
+                            left: 50.0,
+                            top: 15.0,
+                            bottom: 5.0,
+                          ),
+                          hintStyle: TextStyle(
+                            letterSpacing: 2.0,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 5.0),
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 1.5,
+                            ),
+                          ),
+                          hintText: 'District',
+                          contentPadding: EdgeInsets.only(
+                            left: 130.0,
+                            top: 15.0,
+                            bottom: 5.0,
+                          ),
+                          hintStyle: TextStyle(
+                            letterSpacing: 2.0,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 1.5,
+                            ),
+                          ),
+                          hintText: 'Apartment Number',
+                          contentPadding: EdgeInsets.only(
+                            left: 90.0,
+                            top: 15.0,
+                            bottom: 5.0,
+                          ),
+                          hintStyle: TextStyle(
+                            letterSpacing: 2.0,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 1.5,
+                            ),
+                          ),
+                          hintText: 'Floor Number',
+                          contentPadding: EdgeInsets.only(
+                            left: 120.0,
+                            top: 15.0,
+                            bottom: 5.0,
+                          ),
+                          hintStyle: TextStyle(
+                            letterSpacing: 2.0,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding:
-                        EdgeInsets.only(left: 50.0, right: 50.0, top: 20.0),
+                        EdgeInsets.only(left: 40.0, right: 40.0, top: 100.0),
                     child: Container(
                       height: 55,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40.0),
-                        color: Colors.lightBlueAccent,
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: Colors.lightBlue,
                       ),
                       child: FlatButton(
                         onPressed: () {},
                         child: Text(
-                          'START AN ORDER',
+                          'EDIT',
                           style: TextStyle(
-                            fontSize: 18.0,
-                            letterSpacing: 2.0,
+                            fontSize: 20.0,
+                            letterSpacing: 1.5,
+                            color: Colors.grey[100],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsets.only(left: 40.0, right: 40.0, top: 30.0),
+                    child: Container(
+                      height: 55,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: Colors.cyan[200],
+                      ),
+                      child: FlatButton(
+                        onPressed: () {},
+                        child: Text(
+                          'ADD NEW ADDRESS',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            letterSpacing: 1.5,
                             color: Colors.grey[100],
                           ),
                         ),

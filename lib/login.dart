@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -24,8 +25,8 @@ class _LoginState extends State<Login> {
             top: 50,
             left: 100,
             child: Container(
-              height: 200,
-              width: 200,
+              height: deviceHeight(context) * 0.3,
+              width: deviceWidth(context) * 0.5,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('images/3.png'),
@@ -41,8 +42,8 @@ class _LoginState extends State<Login> {
             top: 250,
             left: 30.0,
             child: Container(
-              width: 350,
-              height: 300,
+              height: deviceHeight(context) * 0.5,
+              width: deviceWidth(context) * 0.85,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [

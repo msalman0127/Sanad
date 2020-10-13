@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class Disclaimer extends StatefulWidget {
   @override
@@ -21,14 +22,15 @@ class _DisclaimerState extends State<Disclaimer> {
             ),
           ),
           Positioned(
+            top: 30,
             left: 32.0,
             child: Container(
-              width: 350,
-              height: 720,
+              height: deviceHeight(context),
+              width: deviceWidth(context) * 0.85,
               child: ListView(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 100.0, top: 80.0),
+                    padding: EdgeInsets.only(left: 100.0, top: 50.0),
                     child: Row(
                       children: [
                         Text(
@@ -36,7 +38,7 @@ class _DisclaimerState extends State<Disclaimer> {
                           style: TextStyle(
                             fontSize: 25.0,
                             letterSpacing: 1.5,
-                            color: Colors.blue,
+                            color: Colors.lightBlue,
                           ),
                         ),
                       ],
@@ -46,7 +48,7 @@ class _DisclaimerState extends State<Disclaimer> {
                     padding: const EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 40.0),
                     child: Divider(
                       thickness: 1.0,
-                      color: Colors.blue,
+                      color: Colors.lightBlue,
                     ),
                   ),
                   Padding(
@@ -146,7 +148,7 @@ class _DisclaimerState extends State<Disclaimer> {
                       height: 55,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
-                        color: Colors.lightBlueAccent,
+                        color: Colors.lightBlue,
                       ),
                       child: FlatButton(
                         onPressed: () {},

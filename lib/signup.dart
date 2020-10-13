@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -41,8 +42,8 @@ class _SignUpState extends State<SignUp> {
           Positioned(
             left: 32.0,
             child: Container(
-              width: 350,
-              height: 620,
+              height: deviceHeight(context) * 0.9,
+              width: deviceWidth(context) * 0.85,
               child: ListView(
                 children: [
                   Padding(
