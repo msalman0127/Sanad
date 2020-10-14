@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/DrawerMenu/drawerMenu.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class Login extends StatefulWidget {
@@ -104,13 +105,18 @@ class _LoginState extends State<Login> {
                     padding:
                         EdgeInsets.only(left: 90.0, right: 90.0, top: 20.0),
                     child: Container(
-                      height: 55,
+                      height: deviceHeight(context) * 0.07,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40.0),
                         color: Colors.lightBlueAccent,
                       ),
                       child: FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DrawerMenu()));
+                        },
                         child: Text(
                           'LOGIN',
                           style: TextStyle(
@@ -129,7 +135,7 @@ class _LoginState extends State<Login> {
 
           Positioned(
             top: 500,
-            left: 110,
+            left: 90,
             child: Align(
               alignment: Alignment.center,
               child: Container(

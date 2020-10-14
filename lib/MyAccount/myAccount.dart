@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/AddressSettings/addressSettings.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class MyAccount extends StatefulWidget {
@@ -241,17 +242,17 @@ class _MyAccountState extends State<MyAccount> {
           ),
           Positioned(
             top: 200,
-            left: 30.0,
+            left: 10.0,
             child: Container(
               height: deviceHeight(context) * 0.8,
-              width: deviceWidth(context) * 0.85,
+              width: deviceWidth(context) * 0.98,
               child: Column(
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 5.0, right: 20.0),
+                        padding: EdgeInsets.only(left: 5.0, right: 10.0),
                         child: Container(
                           height: 170,
                           width: 150,
@@ -341,7 +342,7 @@ class _MyAccountState extends State<MyAccount> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 5.0, right: 20.0),
+                        padding: EdgeInsets.only(left: 5.0, right: 10.0),
                         child: Container(
                           height: 170,
                           width: 150,
@@ -407,7 +408,13 @@ class _MyAccountState extends State<MyAccount> {
                                 ),
                               ),
                               FlatButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              AddressSettings()));
+                                },
                                 child: Text(
                                   'ADDRESS SETTINGS',
                                   textAlign: TextAlign.center,

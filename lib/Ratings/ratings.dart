@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:sanad_screens/Points/points.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class Ratings extends StatefulWidget {
@@ -24,7 +25,7 @@ class _RatingsState extends State<Ratings> {
           ),
           Positioned(
             top: 60,
-            left: 100,
+            left: 95,
             child: Container(
               height: deviceHeight(context) * 0.3,
               width: deviceWidth(context) * 0.5,
@@ -38,16 +39,16 @@ class _RatingsState extends State<Ratings> {
           ),
           Positioned(
             top: 260,
-            left: 30.0,
+            left: 10.0,
             child: Container(
               height: deviceHeight(context) * 0.8,
-              width: deviceWidth(context) * 0.85,
+              width: deviceWidth(context) * 0.95,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsets.only(left: 100.0, top: 30.0, right: 100.0),
+                        EdgeInsets.only(left: 80.0, top: 30.0, right: 80.0),
                     child: Container(
                       child: Text(
                         'Welcome Back Ahmed',
@@ -245,7 +246,12 @@ class _RatingsState extends State<Ratings> {
                         color: Colors.lightBlue,
                       ),
                       child: FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Points()));
+                        },
                         child: Text(
                           'SUBMIT',
                           style: TextStyle(

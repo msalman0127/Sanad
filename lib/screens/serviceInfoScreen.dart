@@ -5,6 +5,7 @@ import 'package:sanad_screens/commonWidgets/heading.dart';
 import 'package:sanad_screens/commonWidgets/round_button_flexible.dart';
 import 'package:sanad_screens/consts/colors.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
+import 'package:sanad_screens/screens/session_timings_screen.dart';
 
 class ServiceInfoScreen extends StatelessWidget {
   static String id = 'ServiceInfo';
@@ -15,12 +16,17 @@ class ServiceInfoScreen extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          Heading(title: 'Service Package'),
+          Heading(title: 'SERVICE PACKAGE'),
           textFields(context),
           SizedBox(height: deviceHeight(context) * 0.2),
           RoundButtonFlexible(
-              text: 'Continue',
-              onPressed: () {},
+              text: 'CONTINUE',
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SessionTimingsScreen()));
+              },
               height: 50,
               width: deviceWidth(context))
         ],
@@ -38,14 +44,14 @@ class ServiceInfoScreen extends StatelessWidget {
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.blue,
-                    width: 2.5,
+                    width: 1.5,
                   ),
                 ),
                 hintText: 'Subscription Address',
                 hintStyle: TextStyle(
-                  fontSize: 20.0,
+                  // fontSize: 20.0,
                   //  fontWeight: FontWeight.bold,
-                  letterSpacing: 2.0,
+                  letterSpacing: 1.5,
                   decoration: TextDecoration.none,
                 ),
                 contentPadding: EdgeInsets.symmetric(horizontal: 60.0)),
@@ -60,20 +66,20 @@ class ServiceInfoScreen extends StatelessWidget {
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.blue,
-                        width: 2.5,
+                        width: 1.5,
                       ),
                     ),
                     hintText: 'Add Address',
                     hintStyle: TextStyle(
-                      fontSize: 20.0,
+                      //fontSize: 20.0,
                       //  fontWeight: FontWeight.bold,
-                      letterSpacing: 2.0,
+                      letterSpacing: 1.5,
                       decoration: TextDecoration.none,
                     ),
-                    contentPadding: EdgeInsets.symmetric(horizontal: 60.0)),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 90.0)),
               ),
               Positioned(
-                  right: 130.0,
+                  right: 80.0,
                   top: 10.0,
                   child: Icon(CupertinoIcons.add_circled))
             ],
@@ -86,14 +92,14 @@ class ServiceInfoScreen extends StatelessWidget {
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.blue,
-                    width: 2.5,
+                    width: 1.5,
                   ),
                 ),
                 hintText: 'Subscription Length',
                 hintStyle: TextStyle(
-                  fontSize: 20.0,
+                  //fontSize: 20.0,
                   //  fontWeight: FontWeight.bold,
-                  letterSpacing: 2.0,
+                  letterSpacing: 1.5,
                   decoration: TextDecoration.none,
                 ),
                 contentPadding: EdgeInsets.symmetric(horizontal: 60.0)),
@@ -104,18 +110,34 @@ class ServiceInfoScreen extends StatelessWidget {
           ExpandableNotifier(
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0), color: blue),
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: Colors.lightBlueAccent),
               child: Expandable(
                 collapsed: ExpandableButton(
                   child: Container(
                       height: 40.0,
-                      width: 180.0,
+                      width: 220.0,
                       child: Center(
                           child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Sessions Number'),
-                          Icon(Icons.arrow_drop_down)
+                          Text(
+                            'Sessions Number',
+                            style: TextStyle(color: white),
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(left: 30.0, right: 10.0),
+                            child: Container(
+                              width: 2.0,
+                              height: 25.0,
+                              color: white,
+                            ),
+                          ),
+                          Icon(
+                            Icons.keyboard_arrow_down,
+                            color: white,
+                          )
                         ],
                       ))),
                 ),
@@ -128,9 +150,15 @@ class ServiceInfoScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(10.0),
                         child: Row(
                           children: [
-                            Text('Session 1'),
+                            Text(
+                              '1 Session',
+                              style: TextStyle(color: white),
+                            ),
                             Spacer(),
-                            Text('XX LE')
+                            Text(
+                              'XX LE',
+                              style: TextStyle(color: white),
+                            )
                           ],
                         ),
                       ),
@@ -139,9 +167,15 @@ class ServiceInfoScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(10.0),
                         child: Row(
                           children: [
-                            Text('Session 1'),
+                            Text(
+                              '5 Sessions',
+                              style: TextStyle(color: white),
+                            ),
                             Spacer(),
-                            Text('XX LE')
+                            Text(
+                              'XX LE',
+                              style: TextStyle(color: white),
+                            )
                           ],
                         ),
                       ),
@@ -150,9 +184,15 @@ class ServiceInfoScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(10.0),
                         child: Row(
                           children: [
-                            Text('Session 1'),
+                            Text(
+                              '10 Sessions',
+                              style: TextStyle(color: white),
+                            ),
                             Spacer(),
-                            Text('XX LE')
+                            Text(
+                              'XX LE',
+                              style: TextStyle(color: white),
+                            )
                           ],
                         ),
                       ),
@@ -160,7 +200,11 @@ class ServiceInfoScreen extends StatelessWidget {
                       SizedBox(
                         height: 5.0,
                       ),
-                      ExpandableButton(child: Text('See less'))
+                      ExpandableButton(
+                          child: Icon(
+                        Icons.keyboard_arrow_up,
+                        color: white,
+                      ))
                     ],
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
+import 'package:sanad_screens/screens/paymentInfo.dart';
 
 class DrawerMenu extends StatefulWidget {
   @override
@@ -237,7 +238,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 100, top: 80.0),
+                    padding: EdgeInsets.only(left: 80, top: 80.0),
                     child: Container(
                       child: Text(
                         'Welcome Ahmed,',
@@ -254,13 +255,18 @@ class _DrawerMenuState extends State<DrawerMenu> {
                     padding:
                         EdgeInsets.only(left: 50.0, right: 50.0, top: 20.0),
                     child: Container(
-                      height: 55,
+                      height: deviceHeight(context) * 0.07,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40.0),
                         color: Colors.lightBlueAccent,
                       ),
                       child: FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PaymentInfoScreen()));
+                        },
                         child: Text(
                           'START AN ORDER',
                           style: TextStyle(

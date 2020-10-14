@@ -23,15 +23,14 @@ class ActivityLogScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 50,
-                        width: 30,
+                      Padding(
+                        padding: const EdgeInsets.only(left: 40.0),
                         child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            image: DecorationImage(
-                              image: AssetImage('images/order-icon1.png'),
-                              fit: BoxFit.cover,
+                          height: 50,
+                          width: 50,
+                          child: Tab(
+                            icon: Image.asset(
+                              "images/order-list.png",
                             ),
                           ),
                         ),
@@ -41,13 +40,9 @@ class ActivityLogScreen extends StatelessWidget {
                 ),
                 Container(
                   width: deviceWidth(context) * 0.4,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text('Activity',
-                          style: TextStyle(color: blue, fontSize: 30.0)),
-                    ],
-                  ),
+                  child: Text('ACTIVITY LOG',
+                      style: TextStyle(
+                          color: blue, fontSize: 20.0, letterSpacing: 1.0)),
                 )
               ],
             ),
@@ -65,20 +60,20 @@ class ActivityLogScreen extends StatelessWidget {
     return Container(
       height: 400,
       child: HorizontalDataTable(
-        leftHandSideColumnWidth: 200.0,
-        rightHandSideColumnWidth: 400.0,
+        leftHandSideColumnWidth: 120.0,
+        rightHandSideColumnWidth: 280.0,
         isFixedHeader: true,
         leftHandSideColBackgroundColor: Colors.grey[300],
         rightHandSideColBackgroundColor: Colors.grey[300],
         rowSeparatorWidget: const Divider(
-          color: Colors.black54,
-          height: 1.0,
+          color: Colors.red,
+          height: 2.0,
           thickness: 0.0,
         ),
         headerWidgets: [
           Container(
-              height: 40.0,
-              width: 200.0,
+              height: 60.0,
+              width: 120.0,
               color: Colors.blue[300],
               child: Center(
                   child: Text(
@@ -89,8 +84,8 @@ class ActivityLogScreen extends StatelessWidget {
                 ),
               ))),
           Container(
-              height: 40.0,
-              width: 60.0,
+              height: 60.0,
+              width: 120.0,
               color: Colors.blue[300],
               child: Center(
                   child: Text(
@@ -101,8 +96,8 @@ class ActivityLogScreen extends StatelessWidget {
                 ),
               ))),
           Container(
-              height: 40.0,
-              width: 140.0,
+              height: 60.0,
+              width: 160.0,
               color: Colors.blue[300],
               child: Center(
                   child: Text(

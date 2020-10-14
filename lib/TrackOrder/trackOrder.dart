@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/Order/order.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class TrackOrder extends StatefulWidget {
@@ -37,10 +38,10 @@ class _TrackOrderState extends State<TrackOrder> {
           ),
           Positioned(
             top: 280,
-            left: 30.0,
+            left: 10.0,
             child: Container(
               height: deviceHeight(context) * 0.8,
-              width: deviceWidth(context) * 0.85,
+              width: deviceWidth(context) * 0.95,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -75,7 +76,7 @@ class _TrackOrderState extends State<TrackOrder> {
                     padding: EdgeInsets.only(top: 20.0),
                     child: Container(
                       height: deviceHeight(context) * 0.17,
-                      width: deviceWidth(context) * 0.85,
+                      width: deviceWidth(context),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30.0),
                         color: Colors.lightBlue,
@@ -144,7 +145,7 @@ class _TrackOrderState extends State<TrackOrder> {
                                 child: Text(
                                   'Edit Order',
                                   style: TextStyle(
-                                      color: Colors.white, letterSpacing: 1.0),
+                                      color: Colors.white, letterSpacing: 0.3),
                                 ),
                               )
                             ],
@@ -215,7 +216,9 @@ class _TrackOrderState extends State<TrackOrder> {
                                 child: Text(
                                   'Edit Order',
                                   style: TextStyle(
-                                      color: Colors.white, letterSpacing: 1.0),
+                                    color: Colors.white,
+                                    letterSpacing: 0.3,
+                                  ),
                                 ),
                               )
                             ],
@@ -225,7 +228,7 @@ class _TrackOrderState extends State<TrackOrder> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 10.0),
+                    padding: EdgeInsets.only(top: 20.0),
                     child: Container(
                       child: Text(
                         'Or',
@@ -239,15 +242,18 @@ class _TrackOrderState extends State<TrackOrder> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsets.only(left: 50.0, right: 50.0, top: 10.0),
+                        EdgeInsets.only(left: 50.0, right: 50.0, top: 20.0),
                     child: Container(
-                      height: 55,
+                      height: deviceHeight(context) * 0.08,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40.0),
                         color: Colors.lightBlue,
                       ),
                       child: FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) => Order()));
+                        },
                         child: Text(
                           'ADD NEW ORDER',
                           style: TextStyle(

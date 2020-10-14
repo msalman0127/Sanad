@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/AddressInfo/addressInfo.dart';
 import 'package:sanad_screens/commonWidgets/backgroundImage.dart';
 import 'package:sanad_screens/commonWidgets/heading.dart';
 import 'package:sanad_screens/commonWidgets/round_button.dart';
@@ -26,12 +27,12 @@ class PaymentInfoScreen extends StatelessWidget {
   }
 
   Widget heading() {
-    return Heading(title: 'Payment Info');
+    return Heading(title: 'PAYMENT INFO');
   }
 
   Widget cardDetails(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Column(
         children: [
           TextField(
@@ -39,17 +40,17 @@ class PaymentInfoScreen extends StatelessWidget {
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.blue,
-                    width: 2.5,
+                    width: 1.5,
                   ),
                 ),
                 hintText: 'Cardholder\'s Name',
                 hintStyle: TextStyle(
-                  fontSize: 20.0,
+                  //fontSize: 20.0,
                   //  fontWeight: FontWeight.bold,
-                  letterSpacing: 2.0,
+                  letterSpacing: 1.5,
                   decoration: TextDecoration.none,
                 ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 60.0)),
+                contentPadding: EdgeInsets.symmetric(horizontal: 80.0)),
           ),
           SizedBox(
             height: 20.0,
@@ -59,15 +60,15 @@ class PaymentInfoScreen extends StatelessWidget {
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.blue,
-                  width: 2.5,
+                  width: 1.5,
                 ),
               ),
-              hintText: 'Creditcard Number',
-              contentPadding: EdgeInsets.symmetric(horizontal: 60.0),
+              hintText: 'Credit Card Number',
+              contentPadding: EdgeInsets.symmetric(horizontal: 80.0),
               hintStyle: TextStyle(
-                fontSize: 20.0,
+                //fontSize: 20.0,
                 //  fontWeight: FontWeight.bold,
-                letterSpacing: 2.0,
+                letterSpacing: 1.5,
                 decoration: TextDecoration.none,
               ),
             ),
@@ -80,13 +81,13 @@ class PaymentInfoScreen extends StatelessWidget {
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.blue,
-                  width: 2.5,
+                  width: 1.5,
                 ),
               ),
               hintText: 'Expiration Date',
               contentPadding: EdgeInsets.symmetric(horizontal: 80.0),
               hintStyle: TextStyle(
-                fontSize: 20.0,
+                //fontSize: 20.0,
                 //  fontWeight: FontWeight.bold,
                 letterSpacing: 2.0,
                 decoration: TextDecoration.none,
@@ -103,16 +104,20 @@ class PaymentInfoScreen extends StatelessWidget {
                 height: 40.0,
                 width: 100.0,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0), color: blue),
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.lightBlueAccent),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('MM'),
+                    Text(
+                      'MM',
+                      style: TextStyle(color: white),
+                    ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Container(
                         color: white,
-                        height: 15.0,
+                        height: 25.0,
                         width: 2.0,
                       ),
                     ),
@@ -126,7 +131,10 @@ class PaymentInfoScreen extends StatelessWidget {
                                   lastDate: DateTime(2021))
                               .then((value) => null);
                         },
-                        child: Icon(Icons.arrow_drop_down))
+                        child: Icon(
+                          Icons.keyboard_arrow_down,
+                          color: white,
+                        ))
                   ],
                 ),
               ),
@@ -137,16 +145,20 @@ class PaymentInfoScreen extends StatelessWidget {
                 height: 40.0,
                 width: 100.0,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0), color: blue),
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.lightBlueAccent),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('YYYY'),
+                    Text(
+                      'YYYY',
+                      style: TextStyle(color: white),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 5.0),
                       child: Container(
                         color: white,
-                        height: 15.0,
+                        height: 25.0,
                         width: 2.0,
                       ),
                     ),
@@ -160,7 +172,10 @@ class PaymentInfoScreen extends StatelessWidget {
                                   lastDate: DateTime(2021))
                               .then((value) => null);
                         },
-                        child: Icon(Icons.arrow_drop_down))
+                        child: Icon(
+                          Icons.keyboard_arrow_down,
+                          color: white,
+                        ))
                   ],
                 ),
               )
@@ -174,15 +189,15 @@ class PaymentInfoScreen extends StatelessWidget {
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.blue,
-                  width: 2.5,
+                  width: 1.5,
                 ),
               ),
-              hintText: 'Cvv',
+              hintText: 'CVV',
               contentPadding: EdgeInsets.symmetric(horizontal: 80.0),
               hintStyle: TextStyle(
-                fontSize: 20.0,
+                //fontSize: 20.0,
                 //  fontWeight: FontWeight.bold,
-                letterSpacing: 2.0,
+                letterSpacing: 1.5,
                 decoration: TextDecoration.none,
               ),
             ),
@@ -195,15 +210,15 @@ class PaymentInfoScreen extends StatelessWidget {
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.blue,
-                  width: 2.5,
+                  width: 1.5,
                 ),
               ),
               hintText: 'Billing Address',
               contentPadding: EdgeInsets.symmetric(horizontal: 80.0),
               hintStyle: TextStyle(
-                fontSize: 20.0,
+                //fontSize: 20.0,
                 //  fontWeight: FontWeight.bold,
-                letterSpacing: 2.0,
+                letterSpacing: 1.5,
                 decoration: TextDecoration.none,
               ),
             ),
@@ -212,8 +227,11 @@ class PaymentInfoScreen extends StatelessWidget {
             height: 60.0,
           ),
           RoundButton(
-            text: 'Continue',
-            onPressed: () {},
+            text: 'CONTINUE',
+            onPressed: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => AddressInfo()));
+            },
           )
         ],
       ),

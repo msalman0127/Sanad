@@ -22,7 +22,8 @@ class RoundButtonFlexible extends StatelessWidget {
         width: width,
         margin: EdgeInsets.symmetric(horizontal: 70.0),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30.0), color: blue),
+            borderRadius: BorderRadius.circular(30.0),
+            color: Colors.lightBlueAccent),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

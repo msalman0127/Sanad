@@ -27,13 +27,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AddressInfo(),
+      //  home: AddressInfo(),
       //initialRoute: ServiceInfoScreen.id,
+      // routes: {
+      //   PaymentInfoScreen.id: (context) => PaymentInfoScreen(),
+      //   ServiceInfoScreen.id: (context) => ServiceInfoScreen(),
+      //   SessionTimingsScreen.id: (context) => SessionTimingsScreen(),
+      //   ActivityLogScreen.id: (context) => ActivityLogScreen()
+      // },
+
+      initialRoute: 'SplashScreen', //setting to load up the 1st screen
+
+      //creating routes map
       routes: {
-        PaymentInfoScreen.id: (context) => PaymentInfoScreen(),
-        ServiceInfoScreen.id: (context) => ServiceInfoScreen(),
-        SessionTimingsScreen.id: (context) => SessionTimingsScreen(),
-        ActivityLogScreen.id: (context) => ActivityLogScreen()
+        'SplashScreen': (context) => Loading(),
       },
     );
   }

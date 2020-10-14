@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:sanad_screens/TrackOrder/trackOrder.dart';
 import 'package:sanad_screens/commonWidgets/heading.dart';
 import 'package:sanad_screens/commonWidgets/round_button_flexible.dart';
 import 'package:sanad_screens/consts/colors.dart';
@@ -16,20 +17,24 @@ class SessionTimingsScreen extends StatefulWidget {
 }
 
 class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
-  bool status = true;
+  bool maleStatus = true;
+  bool femaleStatus = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
         children: [
-          Heading(title: 'Session Timings'),
+          Heading(title: 'SESSION TIMINGS'),
           bannerTextAboveCalender(),
           calender(),
           colorIdentification(),
           maleFemaleButtons(),
           RoundButtonFlexible(
               text: 'Done',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => TrackOrder()));
+              },
               height: 50,
               width: deviceWidth(context)),
           SizedBox(
@@ -47,9 +52,38 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
           'Based on the size of your apartment do you',
           style: TextStyle(color: Colors.black, letterSpacing: 2.0),
         ),
-        Text(
-          'need one or two Sanad employees',
-          style: TextStyle(color: Colors.black, letterSpacing: 2.0),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'need',
+              style: TextStyle(color: Colors.black, letterSpacing: 2.0),
+            ),
+            Text(
+              ' one ',
+              style: TextStyle(
+                color: Colors.lightBlueAccent,
+                letterSpacing: 2.0,
+                fontSize: 20.0,
+              ),
+            ),
+            Text(
+              'or',
+              style: TextStyle(color: Colors.black, letterSpacing: 2.0),
+            ),
+            Text(
+              ' two ',
+              style: TextStyle(
+                color: Colors.lightBlueAccent,
+                letterSpacing: 2.0,
+                fontSize: 20.0,
+              ),
+            ),
+            Text(
+              'Sanad employees.',
+              style: TextStyle(color: Colors.black, letterSpacing: 2.0),
+            ),
+          ],
         ),
         SizedBox(
           height: 10.0,
@@ -59,7 +93,7 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
           style: TextStyle(color: Colors.black, letterSpacing: 2.0),
         ),
         Text(
-          'the availability calender below',
+          'the availability calender below.',
           style: TextStyle(color: Colors.black, letterSpacing: 2.0),
         ),
         SizedBox(
@@ -70,7 +104,7 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
           style: TextStyle(color: Colors.black, letterSpacing: 2.0),
         ),
         Text(
-          'Within a three days notice',
+          'Within a three days notice.',
           style: TextStyle(color: Colors.black, letterSpacing: 2.0),
         )
       ],
@@ -89,9 +123,9 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
         weekendTextStyle: TextStyle(
           color: blue,
         ),
-        thisMonthDayBorderColor: blue,
-        todayButtonColor: blue,
-        weekDayBackgroundColor: blue,
+        thisMonthDayBorderColor: Colors.lightBlueAccent,
+        todayButtonColor: Colors.lightBlueAccent,
+        weekDayBackgroundColor: Colors.lightBlueAccent,
         weekdayTextStyle: TextStyle(
           color: white,
         ),
@@ -120,18 +154,27 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Column(
-          children: [
-            Container(
-              height: 15.0,
-              width: 15.0,
-              color: Colors.blue[900],
-            ),
-            SizedBox(
-              height: 3.0,
-            ),
-            Text('Booked')
-          ],
+        Padding(
+          padding: const EdgeInsets.only(bottom: 15.0),
+          child: Column(
+            children: [
+              Container(
+                height: 15.0,
+                width: 15.0,
+                color: Colors.blue[900],
+              ),
+              SizedBox(
+                height: 3.0,
+              ),
+              Container(
+                width: 60,
+                child: Text(
+                  'Booked                  ',
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
         ),
         Column(
           children: [
@@ -143,7 +186,13 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
             SizedBox(
               height: 3.0,
             ),
-            Text('Selected Date'),
+            Container(
+              width: 60,
+              child: Text(
+                'Selected date',
+                textAlign: TextAlign.center,
+              ),
+            ),
           ],
         ),
         Column(
@@ -156,21 +205,32 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
             SizedBox(
               height: 3.0,
             ),
-            Text('Two Sanad employees')
+            Container(
+                width: 100,
+                child: Text(
+                  'Two Sanad employees',
+                  textAlign: TextAlign.center,
+                )),
           ],
         ),
-        Column(
-          children: [
-            Container(
-              height: 15.0,
-              width: 15.0,
-              color: Colors.grey,
-            ),
-            SizedBox(
-              height: 3.0,
-            ),
-            Text('Free')
-          ],
+        Padding(
+          padding: const EdgeInsets.only(bottom: 15.0),
+          child: Column(
+            children: [
+              Container(
+                height: 15.0,
+                width: 15.0,
+                color: Colors.grey,
+              ),
+              SizedBox(
+                height: 3.0,
+              ),
+              Text(
+                'Free',
+                textAlign: TextAlign.center,
+              )
+            ],
+          ),
         )
       ],
     );
@@ -191,13 +251,15 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
                   height: 35.0,
                   valueFontSize: 15.0,
                   toggleSize: 15.0,
-                  value: status,
+                  value: maleStatus,
                   borderRadius: 30.0,
                   padding: 8.0,
                   showOnOff: true,
+                  inactiveColor: Colors.cyan[100],
+                  activeColor: blue,
                   onToggle: (val) {
                     setState(() {
-                      status = val;
+                      maleStatus = val;
                     });
                   },
                 ),
@@ -206,7 +268,7 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
           ),
           SizedBox(height: 10.0),
           Container(
-            height: 2.0,
+            height: 1.5,
             width: deviceWidth(context),
             color: blue,
           ),
@@ -223,13 +285,15 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
                   height: 35.0,
                   valueFontSize: 15.0,
                   toggleSize: 15.0,
-                  value: status,
+                  value: femaleStatus,
                   borderRadius: 30.0,
                   padding: 8.0,
+                  inactiveColor: Colors.cyan[100],
+                  activeColor: blue,
                   showOnOff: true,
                   onToggle: (val) {
                     setState(() {
-                      status = val;
+                      femaleStatus = val;
                     });
                   },
                 ),
@@ -238,7 +302,7 @@ class _SessionTimingsScreenState extends State<SessionTimingsScreen> {
           ),
           SizedBox(height: 10.0),
           Container(
-            height: 2.0,
+            height: 1.5,
             width: deviceWidth(context),
             color: blue,
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/MyAccount/myAccount.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class OrderSettings extends StatefulWidget {
@@ -287,7 +288,12 @@ class _OrderSettingsState extends State<OrderSettings> {
                     height: 30,
                     padding: EdgeInsets.only(top: 10.0),
                     child: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyAccount()));
+                      },
                       child: Text(
                         'My Orders',
                         style: TextStyle(

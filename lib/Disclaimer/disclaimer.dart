@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
+import 'package:sanad_screens/screens/serviceInfoScreen.dart';
 
 class Disclaimer extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _DisclaimerState extends State<Disclaimer> {
               child: ListView(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 100.0, top: 50.0),
+                    padding: EdgeInsets.only(left: 75.0, top: 50.0),
                     child: Row(
                       children: [
                         Text(
@@ -54,9 +55,8 @@ class _DisclaimerState extends State<Disclaimer> {
                   Padding(
                     padding: EdgeInsets.only(top: 10.0),
                     child: Container(
-                      width: 300,
-                      height: 60,
-                      padding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 0.0),
+                      height: deviceHeight(context) * 0.1,
+                      padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Please Note that your subscription period and number of session should allow for the adequacy of the size of your house.',
                         style: TextStyle(
@@ -69,9 +69,8 @@ class _DisclaimerState extends State<Disclaimer> {
                   Padding(
                     padding: EdgeInsets.only(top: 10.0),
                     child: Container(
-                      width: 300,
-                      height: 50,
-                      padding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 0.0),
+                      height: deviceHeight(context) * 0.07,
+                      padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 0.0),
                       child: Text(
                         'Our session guarantees the completion of the following in one session: ',
                         style: TextStyle(
@@ -143,15 +142,20 @@ class _DisclaimerState extends State<Disclaimer> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsets.only(left: 100.0, right: 100.0, top: 120.0),
+                        EdgeInsets.only(left: 100.0, right: 100.0, top: 160.0),
                     child: Container(
-                      height: 55,
+                      height: deviceHeight(context) * 0.07,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
-                        color: Colors.lightBlue,
+                        color: Colors.lightBlueAccent,
                       ),
                       child: FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ServiceInfoScreen()));
+                        },
                         child: Text(
                           'NEXT',
                           style: TextStyle(

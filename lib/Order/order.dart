@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/OrderSettings/orderSettings.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
+import 'package:sanad_screens/screens/activity_log_screen.dart';
 
 class Order extends StatefulWidget {
   @override
@@ -243,15 +245,15 @@ class _OrderState extends State<Order> {
           ),
           Positioned(
             top: 200,
-            left: 30.0,
+            left: 10.0,
             child: Container(
               height: deviceHeight(context) * 0.5,
-              width: deviceWidth(context) * 0.85,
+              width: deviceWidth(context) * 0.95,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 5.0, right: 20.0),
+                    padding: EdgeInsets.only(left: 5.0, right: 10.0),
                     child: Container(
                       height: 170,
                       width: 150,
@@ -276,7 +278,13 @@ class _OrderState extends State<Order> {
                             ),
                           ),
                           FlatButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ActivityLogScreen()));
+                            },
                             child: Text(
                               'ACTIVITY LOG',
                               textAlign: TextAlign.center,
@@ -317,7 +325,12 @@ class _OrderState extends State<Order> {
                             ),
                           ),
                           FlatButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => OrderSettings()));
+                            },
                             child: Text(
                               'ORDER SETTINGS',
                               textAlign: TextAlign.center,

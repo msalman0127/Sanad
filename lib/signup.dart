@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
+import 'package:sanad_screens/login.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -47,7 +48,7 @@ class _SignUpState extends State<SignUp> {
               child: ListView(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 10.0),
+                    padding: EdgeInsets.only(top: 30.0),
                     child: Container(
                       child: TextField(
                         decoration: InputDecoration(
@@ -339,15 +340,18 @@ class _SignUpState extends State<SignUp> {
 
                   Padding(
                     padding:
-                        EdgeInsets.only(left: 100.0, right: 100.0, top: 5.0),
+                        EdgeInsets.only(left: 80.0, right: 80.0, top: 20.0),
                     child: Container(
-                      height: 45,
+                      height: deviceHeight(context) * 0.07,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
                         color: Colors.lightBlueAccent,
                       ),
                       child: FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) => Login()));
+                        },
                         child: Text(
                           'CONTINUE',
                           style: TextStyle(

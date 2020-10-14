@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/Points/points.dart';
+import 'package:sanad_screens/Ratings/ratings.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class AddressSettings extends StatefulWidget {
@@ -215,7 +217,7 @@ class _AddressSettingsState extends State<AddressSettings> {
           ),
           Positioned(
             top: 40,
-            left: 120,
+            left: 90,
             child: Row(
               children: [
                 Container(
@@ -229,7 +231,7 @@ class _AddressSettingsState extends State<AddressSettings> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: Text(
                     'ADDRESS SETTINGS',
                     style: TextStyle(
@@ -349,9 +351,9 @@ class _AddressSettingsState extends State<AddressSettings> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsets.only(left: 40.0, right: 40.0, top: 100.0),
+                        EdgeInsets.only(left: 30.0, right: 30.0, top: 100.0),
                     child: Container(
-                      height: 55,
+                      height: deviceHeight(context) * 0.08,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
                         color: Colors.lightBlue,
@@ -371,15 +373,20 @@ class _AddressSettingsState extends State<AddressSettings> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsets.only(left: 40.0, right: 40.0, top: 30.0),
+                        EdgeInsets.only(left: 30.0, right: 30.0, top: 30.0),
                     child: Container(
-                      height: 55,
+                      height: deviceHeight(context) * 0.08,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
                         color: Colors.cyan[200],
                       ),
                       child: FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Ratings()));
+                        },
                         child: Text(
                           'ADD NEW ADDRESS',
                           style: TextStyle(

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sanad_screens/Disclaimer/disclaimer.dart';
 import 'package:sanad_screens/helperFunctions/commonFunctions.dart';
 
 class AddressInfo extends StatefulWidget {
@@ -48,29 +49,33 @@ class _AddressInfoState extends State<AddressInfo> {
               child: ListView(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 60.0, top: 50.0),
-                    child: Row(
-                      children: [
-                        Radio(
-                          value: 1,
-                          groupValue: group,
-                          onChanged: (T) {
-                            print(T);
+                    padding: EdgeInsets.only(left: 30.0, top: 50.0),
+                    child: Container(
+                      height: deviceHeight(context) * 0.05,
+                      width: deviceWidth(context),
+                      child: Row(
+                        children: [
+                          Radio(
+                            value: 1,
+                            groupValue: group,
+                            onChanged: (T) {
+                              print(T);
 
-                            setState(() {
-                              group = T;
-                            });
-                          },
-                        ),
-                        Text(
-                          'Same As Billing Address',
-                          style: TextStyle(
-                            fontSize: 17.0,
-                            letterSpacing: 1.5,
-                            color: Colors.black,
+                              setState(() {
+                                group = T;
+                              });
+                            },
                           ),
-                        ),
-                      ],
+                          Text(
+                            'Same As Billing Address',
+                            style: TextStyle(
+                              fontSize: 17.0,
+                              letterSpacing: 1.5,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
@@ -210,13 +215,18 @@ class _AddressInfoState extends State<AddressInfo> {
                     padding:
                         EdgeInsets.only(left: 100.0, right: 100.0, top: 50.0),
                     child: Container(
-                      height: 55,
+                      height: deviceHeight(context) * 0.07,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
                         color: Colors.lightBlueAccent,
                       ),
                       child: FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Disclaimer()));
+                        },
                         child: Text(
                           'DONE',
                           style: TextStyle(
