@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sanad_screens/AddressInfo/addressInfo.dart';
 import 'package:sanad_screens/AddressSettings/addressSettings.dart';
@@ -18,7 +20,12 @@ import 'package:sanad_screens/screens/paymentInfo.dart';
 import 'package:sanad_screens/screens/serviceInfoScreen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,6 +33,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: DevicePreview.of(context).locale, // <--- /!\ Add the locale
+      builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       //  home: AddressInfo(),
       //initialRoute: ServiceInfoScreen.id,
